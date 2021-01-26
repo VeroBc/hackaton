@@ -11,3 +11,13 @@ export const subscribeCategory = (callBackReturnCategory, categoryType ) => {
       console.log("Error getting documents: ", error);
     });
 }
+
+export const setUser = (user) => {
+  db.collection('users')
+    .doc(user.uid)
+    .set(user)
+    .then(() => {
+      console.log('Document successfully written!');
+    })
+    .catch(e => console.log('error', e));
+};

@@ -6,8 +6,9 @@ import { Category } from './components/category';
 import { Promociones } from './components/promociones';
 import { Contacto } from './components/contacto';
 // import { Restaurant } from './components/restaurant';
-// import { Signin } from './components/signin';
-// import { Signup } from './components/signup';
+import { Signup } from './components/signup';
+import { Signin } from './components/signin';
+import { About } from './components/about';
 import './App.css';
 import './services/firebase';
 import {
@@ -32,6 +33,11 @@ export const App = () => {
         </nav>
         <Switch>
           <Route exact path="/">
+          <Route path="/about">
+            <About/>
+          </Route>
+          <Route path="/">
+
             <Home />
             
           </Route>
@@ -49,6 +55,12 @@ export const App = () => {
           </Route>
           <Route path="/contacto">
             <Contacto />
+          </Route>
+          <Route path="/signin">
+            <Signin/>
+          </Route>
+          <Route path="/signup">
+            <Signup />
           </Route>
         </Switch>
       </div>

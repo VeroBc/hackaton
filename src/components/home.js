@@ -1,27 +1,20 @@
-import React, { useState } from 'react';
-import { Category } from './category';
-import '../App.css';
+import { BrowserRouter as Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faInstagram } from "@fortawesome/fontawesome-free-brands";
 import {faFacebookSquare } from "@fortawesome/fontawesome-free-brands"
 import {faWhatsapp } from "@fortawesome/fontawesome-free-brands"
 import {faYoutube } from "@fortawesome/fontawesome-free-brands"
 
-// import '../App.css';
-// import {
-//   Link, 
-//   BrowserRouter as Router 
-// } from "react-router-dom";
 
 export const Home = () => {
 
   const [currentCategory, setCurrentcategory] = useState('maquillaje');
  
   return (
-    
-    <div>
+      <div>
       <section >
-
     <header className="header">
    <div className="icon-container">
     <FontAwesomeIcon className= "icons-redes"icon={faFacebookSquare}/>{" "}
@@ -30,16 +23,15 @@ export const Home = () => {
     <FontAwesomeIcon className= "icons-redes"icon={faYoutube}/>{" "}
     </div> 
      </header>    
-        {/* <nav>
-        <Router>
-            <a href="/" className='home'><Link to="/">Home</Link></a>
-            <a href="/nosotros" className='nosotros'><Link to="/nosotros">Nosotros</Link></a>
-            <a href="/nuestrasMarcas" className='nuestrasMarcas'><Link to="/nuestrasMarcas">Nuestras Marcas</Link></a>
-            <a href="/categorias" className='categorias'><Link to="/categorias">Categorias</Link></a>
-            <a href="/promociones" className='promociones'><Link to="/promociones">Promociones</Link></a>
-            <a href="/contacto" className='contacto'><Link to="/contacto">Contacto</Link></a>
-        </Router>
-        </nav> */}
+    <div>
+      <section >
+        <nav className='navbar'>
+          {/* <img src={logo} className='imglogo' alt="Logo"/> */}
+          <a href="/about" className='signup'><Link to="/about">Nosotros</Link></a>
+          <a href="/signup" className='signup'><Link to="/signup">Regístrate</Link></a>
+          <a href="/signin" className='signin'><Link to="/signin">Inicia sesión</Link></a>          
+        </nav>
+
         <div className='subheader'>
           <h1 className='filters'>
             <a href="#" onClick={()=> setCurrentcategory('maquillaje')}>Maquillaje</a>
@@ -48,6 +40,8 @@ export const Home = () => {
             <a href="#" onClick={()=> setCurrentcategory('cuidado personal')}>Cuidado personal</a>
             <a href="#" onClick={()=> setCurrentcategory('tratamiento corporal')}>Tratamiento corporal</a>
             <a href="#" onClick={()=> setCurrentcategory('tratamiento facial')}>Tratamiento facial</a>
+            <FontAwesomeIcon className ='icon' icon={faShoppingCart} />
+          
           </h1>
         </div>
         <div>
@@ -56,4 +50,5 @@ export const Home = () => {
       </section>
     </div>
   );
+
 }
