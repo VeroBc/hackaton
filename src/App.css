@@ -123,3 +123,65 @@
   width: 100px;
 }
 
+
+/* Auth */
+.signUpForm {
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #DDDDDD;
+  font-size: 0.9em;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-right: 5%;
+  padding-left: 5%;
+  width: min-content;
+}
+
+.inputButton {
+  margin: 10px;
+  padding-top: 13px;
+  padding-right: 20px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  font-size: 13px;
+  width: 280px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.signUpButton {
+  background-color: #173083;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  width: 280px;
+  border-radius: 10px;
+  border: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.signUpButton:hover {
+  background-color:#314aa5;
+}
+
+.motto {
+  margin-bottom: 6%;
+  margin-top: 6%;
+  font-size: 16px;
+  color: #8b8a8a;
+  display: inline-block;
+}
+
+.login {
+  color:  #173083;
+  padding-left: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
