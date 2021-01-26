@@ -19,6 +19,7 @@ export const App = () => {
         <Switch>
           <Route path="/">
             <Home />
+            
           </Route>
         </Switch>
       </div>

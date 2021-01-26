@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Category } from './category';
 import '../App.css';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faInstagram } from "@fortawesome/fontawesome-free-brands";
+import {faFacebookSquare } from "@fortawesome/fontawesome-free-brands"
+import {faWhatsapp } from "@fortawesome/fontawesome-free-brands"
+import {faYoutube } from "@fortawesome/fontawesome-free-brands"
 export const Home = () => {
 
   const [currentCategory, setCurrentcategory] = useState('maquillaje');
@@ -9,6 +13,14 @@ export const Home = () => {
   return (
     <div>
       <section >
+    <header className="header">
+   <div className="icon-container">
+    <FontAwesomeIcon className= "icons-redes"icon={faFacebookSquare}/>{" "}
+    <FontAwesomeIcon className= "icons-redes"icon={faInstagram}/>{" "}
+    <FontAwesomeIcon className= "icons-redes"icon={faWhatsapp}/>{" "}
+    <FontAwesomeIcon className= "icons-redes"icon={faYoutube}/>{" "}
+    </div> 
+     </header>    
         <div className='subheader'>
           <h1 className='filters'>
             <a href="#" onClick={()=> setCurrentcategory('maquillaje')}>Maquillaje</a>
