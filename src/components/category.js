@@ -39,12 +39,9 @@ export const Category = (props) => {
         <div className='totalPrice'>
           <div className='total'>Total</div>
           <div className='amount'>S/. {(order.reduce((ant, item) => ant + item.price, 0)).toFixed(2)}</div>
-          <button className ='buttonOrder'>Comprar</button>
+          <button className ='buttonOrder'>Comprar ahora</button>
         </div>
       </div>
-
-
-
      
     </div>
   )
