@@ -29,7 +29,7 @@ export const Signup = () => {
     <div>
       <form onSubmit={handleSubmit} action="/" method="POST" className="signUpForm">
         {/* <img src={logo} className='imglogoForm' alt="Logo"/> */}
-        <label className="motto">Formulario de registro de personal</label>
+        <label className="motto">Crea tu cuenta</label>
         <div>
             <input 
               type="text"
