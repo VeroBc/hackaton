@@ -1,12 +1,14 @@
-import React from 'react';
+// import React, { useState, useEffect } from 'react';
 import { Home } from './components/home';
 import { Nosotros } from './components/nosotros';
-import { Marcas } from './components/nuestrasMarcas';
+import { NuestrasMarcas } from './components/nuestrasMarcas';
 import { SelectCategory } from './components/selectCategory';
 import { Promociones } from './components/promociones';
 import { Contacto } from './components/contacto';
 import { Signup } from './components/signup';
 import { Signin } from './components/signin';
+import { OrderCart } from './components/orderCart';
+import { signOut } from './services/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faInstagram } from "@fortawesome/fontawesome-free-brands";
 import {faFacebookSquare } from "@fortawesome/fontawesome-free-brands";
@@ -14,6 +16,7 @@ import {faWhatsapp } from "@fortawesome/fontawesome-free-brands";
 import {faYoutube } from "@fortawesome/fontawesome-free-brands";
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import './services/firebase';
 import {
@@ -22,9 +25,38 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+// import { subscribeOrder } from './services/backend'
+import { getCurrentUser } from './services/backend';
+import { UserContext } from './components/userContext';
+import React, { useState, useEffect, useContext } from 'react';
 
 export const App = () => {
+
+  const [user, setUser]= useState(null);
+
+  const currentUser = useContext(UserContext);
+
+  const getUserData = (dataUser) => {
+    getCurrentUser(dataUser).then((userData) => {
+      return setUser(userData);
+    });
+  }
+
+  const [orderList, setOrderList] = useState([]);
+
+  const addItemToOrder = (item) =>  {
+    setOrderList([...orderList, item]);
+  }
+
+   const deleteItemFromOrder = (item) => {
+    const tempArray = orderList.filter((itemInOrderList)=> itemInOrderList.id !== item.id );        
+    setOrderList(tempArray);
+  }
+  // useEffect(() => subscribeOrder(setOrderList), []) 
+
+
+  useEffect(() => getUserData(currentUser), [currentUser])
+
   return (
     <Router>
       <div>
@@ -42,22 +74,20 @@ export const App = () => {
             <Link to="/promociones">Promociones</Link>
             <Link to="/contacto">Contacto</Link>
             <Link to="/signin"><FontAwesomeIcon className ='icon' icon={faUser} /></Link>
-            <Link to="/cart"><FontAwesomeIcon className ='icon' icon={faShoppingCart} /></Link>
-            
+            <Link to="/cart"><FontAwesomeIcon className ='icon' icon={faShoppingCart}/><div className ='quantity'>{orderList.length}</div></Link>
+            <FontAwesomeIcon className='signOutIcon' onClick={()=> signOut()} icon={faSignOutAlt} />
+            {user && <p>{user.name}</p>}
         </nav>
         <Switch>
-          <Route exact path="/">
-            <Home/>
-            <SelectCategory />
-          </Route>
+
           <Route path="/nosotros">
             <Nosotros />
           </Route>
           <Route path="/nuestrasMarcas">
-            <Marcas />
+            <NuestrasMarcas user={user} addItemToOrder={addItemToOrder} deleteItemFromOrder={deleteItemFromOrder} orderList={orderList} />
           </Route>
           <Route path="/categorias">
-            <SelectCategory />
+            <SelectCategory user={user} addItemToOrder={addItemToOrder} deleteItemFromOrder={deleteItemFromOrder} orderList={orderList}/>
           </Route>
           <Route path="/promociones">
             <Promociones />
@@ -71,7 +101,14 @@ export const App = () => {
           <Route path="/signup">
             <Signup />
           </Route>
-  
+          <Route path="/cart">
+            <OrderCart orderList={orderList} deleteItemFromOrder={deleteItemFromOrder} />
+          </Route>
+          <Route path="/">
+            <Home/>
+            <SelectCategory user={user} addItemToOrder={addItemToOrder} deleteItemFromOrder={deleteItemFromOrder} orderList={orderList}/>
+          </Route>
+
         </Switch>
       </div>
     </Router>

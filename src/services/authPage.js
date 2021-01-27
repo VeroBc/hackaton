@@ -10,7 +10,7 @@ export const AuthPage = () => {
     firebase.auth().signInWithPopup(provider)
     .then(() => auth.currentUser)
     .then((currentUser) => {
-      setUser({
+      return setUser({
         uid: currentUser.uid,
         mail: currentUser.email,
         name: currentUser.displayName,
@@ -19,14 +19,14 @@ export const AuthPage = () => {
     })
     // .then(() => getCurrentUser())
     .then(() => {
-      window.location = '/restaurant';
+      window.location = '/';
     })
 
   }
 
   return (
     <div>
-      <img src={logoGoogle} onClick={authWithGoogle} alt="Google" class="googleIcon"></img>
+      <img src={logoGoogle} onClick={authWithGoogle} alt="Google" className="googleIcon"></img>
     </div>
   )
 

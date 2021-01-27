@@ -2,7 +2,7 @@
 import { Category } from './category';
 import React, { useState } from 'react';
 
-export const SelectCategory = () => {
+export const SelectCategory = (props) => {
 
   const [currentCategory, setCurrentcategory] = useState('maquillaje');
  
@@ -21,7 +21,7 @@ export const SelectCategory = () => {
           </div>
 
           <div>
-            <Category categoryType={currentCategory}/>
+            <Category categoryType={currentCategory} addItemToOrder={props.addItemToOrder} deleteItemFromOrder={props.deleteItemFromOrder} user={props.user} orderList={props.orderList}/>
           </div>
 
         </section>

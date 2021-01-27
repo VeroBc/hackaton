@@ -31,6 +31,10 @@ export const Signup = () => {
         {/* <img src={logo} className='imglogoForm' alt="Logo"/> */}
         <label className="motto">Crea tu cuenta</label>
         <div>
+            <div>
+              <p className="motto">O continuar con:</p>
+              <AuthPage/>
+            </div>
             <input 
               type="text"
               name="email" 
@@ -50,10 +54,7 @@ export const Signup = () => {
             <div id= "errorMessage"></div>
         </div>
         <button type="submit" className="signUpButton">Regístrate</button>
-        <div>
-          <p className="motto">O continuar con:</p>
-          <AuthPage/>
-        </div>
+        
         <p className="motto">¿Tienes una cuenta?<a href="/signin" className="login" style={styles.color}>Inicia sesión</a></p>
       </form>
     </div>

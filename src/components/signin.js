@@ -29,8 +29,13 @@ export const Signin = () => {
     <div>
       <form onSubmit={handleSubmit} action="/" method="POST" className="signUpForm">
         {/* <img src={logo} className='imglogoForm' alt="Logo"/> */}
-        <label className="motto">Si tienes una cuenta, inicia sesión</label>
+        <label className="motto">Inicia sesión</label>
         <div>
+
+        <div>
+          <p className="motto">O continuar con:</p>
+          <AuthPage/>
+        </div>
             <input 
               type="text"
               name="email" 
@@ -50,10 +55,7 @@ export const Signin = () => {
             <div id= "errorMessage"></div>
         </div>
         <button type="submit" className="signUpButton">Inicia sesión</button>
-        <div>
-          <p className="motto">O continuar con:</p>
-          <AuthPage/>
-        </div>
+
         <p className="motto">¿No tienes una cuenta?<a href="/signup" className="login" style={styles.color}>Regístrate</a></p>
       </form>
     </div>

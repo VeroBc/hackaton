@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Item } from './item.js';
-// import { Order } from './order';
-import { subscribeCategory } from '../services/backend';
+
+import { subscribeBrand } from '../services/backend';
 import '../App.css';
 
-export const Category = (props) => {
+export const Brand = (props) => {
 
-  const [category, setCategory] = useState([]);
+  const [categoryBrand, setCategoryBrand] = useState([]);
 
-  useEffect(() => subscribeCategory(setCategory, props.categoryType), [props.categoryType]) 
+  useEffect(() => subscribeBrand(setCategoryBrand, props.brandType), [props.brandType]) 
 
   // para determinar si el item ha sido seleccionado
   const inCart = (item) => {
@@ -19,12 +19,13 @@ export const Category = (props) => {
 
   return (
     <div className='Menu productsList' style={styles.container}>
-      { category.map((item, index) => <Item 
+      { categoryBrand.map((item, index) => <Item 
           key = {'m'+index} 
           item = {item} 
           seleccionar={props.addItemToOrder}
           borrar={() => props.deleteItemFromOrder(item)} 
-          inCart = {inCart(item)}/>)
+          inCart = {inCart(item)}
+          />)
       }
     </div>)
 }
