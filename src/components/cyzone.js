@@ -7,7 +7,7 @@ export const Cyzone = () => {
     return (
         <div>
             <div>
-            <img src="/imagenes/cyzonemarca.png" alt="marca" className="bannermarca"/>
+            <img src="imagenes/cyzonemarca.png" alt="marca" className="bannermarca"/>
         </div>
         <section href="#nav-second">
         <div className='subheader'>

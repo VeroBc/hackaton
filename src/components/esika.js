@@ -7,7 +7,7 @@ export const Esika = () => {
     return (
         <div>
             <div>
-            <img src="/imagenes/esikamarca.png" alt="marca" className="bannermarca"/>
+            <img src="imagenes/esikamarca.png" alt="marca" className="bannermarca"/>
         </div>
         <section href="#nav-second">
         <div className='subheader'>

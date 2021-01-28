@@ -17,15 +17,15 @@ export const NuestrasMarcas = (props) => {
 
       <div className= "container-bu" >
         <div style={{position: "relative"}}>
-            <img src="/imagenes/esika.png" alt="marca" className="marcaesika"/>
+            <img src="https://i.ibb.co/jWvMDwB/esika.png" alt="marca" className="marcaesika"/>
             <Button className= "button1" variant="light" size="sm"><div  onClick={()=> sc('ESIKA')} className="link-marca" >Ver productos </div> </Button>    
         </div>
         <div style={{position: "relative"}}>
-            <img src="/imagenes/lbel.png" alt="marca" className="marcaesika"/>
+            <img src="https://i.ibb.co/D784SPS/lbel.png" alt="marca" className="marcaesika"/>
             <Button className= "button1" variant="light" size="sm"><div onClick={()=> sc('L\'BEL')} className="link-marca">Ver productos </div></Button>
         </div>
         <div style={{position: "relative"}}>
-            <img src="/imagenes/cyzone.png" alt="marca" className="marcaesika"/>
+            <img src="https://i.ibb.co/NKwyCmX/cyzone.png" alt="marca" className="marcaesika"/>
             <Button className= "button1" variant="light" size="sm"><div onClick={()=> sc('CYZONE')} className="link-marca">Ver productos </div></Button>
         </div>
       </div>

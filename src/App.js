@@ -64,6 +64,8 @@ export const App = () => {
 
   useEffect(() => getUserData(currentUser), [currentUser])
 
+  // const HOMEPATH = window.location.href.includes("Hack") ? "/Hack" : "/" ;
+
   return (
     <Router>
       <div>
@@ -142,6 +144,7 @@ export const App = () => {
             <Home/>
             <SelectCategory user={user} addItemToOrder={addItemToOrder} deleteItemFromOrder={deleteItemFromOrder} orderList={orderList}/>
           </Route>
+ 
         </Switch>
         <Footer />
       </div>

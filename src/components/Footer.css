@@ -76,3 +76,8 @@ ul li {
     color: #adbcd7;
     font-size: 28px;
 }
+
+.footer-contenedor {
+  position: absolute;
+  width: 100%;
+}

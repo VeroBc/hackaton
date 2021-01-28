@@ -31,11 +31,14 @@
 }
 
 .unorderList {
-  font-size: 12px;
+
+  font-size: 14px;
   cursor: pointer;
   margin: 10px;
-  max-width: 400px;
-  max-height: 300px;
+  /* width: 500px;
+  height: 400px; */
+  max-width: 30%;
+  max-height: 400px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -55,8 +58,8 @@
   cursor: pointer;
   object-fit: cover;
   border-radius: 10%;
-  width: 150px;
-  height: 100px;
+  width: 160px;
+  height: auto;
 }
 
 .price {
@@ -104,18 +107,30 @@
 
 .cart {
   grid-area: cart;
-  background-color: black;
-  color: white;
-  border: 2px solid #555555;
-  width: 100px;
+  background-color: #94A8CA;
+  color: #fff;
+  border: 2px solid #94A8CA;
+  width: 120px;
   font-size: 100%;
-  margin: 1%;
+  margin: 7px;
+  padding: 7px;
+  height: auto;
 }
 
 .cart:hover {
   background-color: #555555;
   color: white;
 }
+
+.orderCart {
+  margin-top: 56px;
+}
+
+.listCart{
+  margin-top: 56px;
+  display: flex;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -140,12 +155,14 @@
 }
 .buynow {
   grid-area: buynow;
-  background-color: black;
-  color: white;
-  border: 2px solid #555555;
-  width: 100px;
+  background-color: #94A8CA;
+  color: #fff;
+  border: 2px solid #94A8CA;
+  width: 120px;
   font-size: 100%;
-  margin: 1%;
+  margin: 7px;
+  padding: 7px;
+  height: auto;
 }
 .buynow:hover {
   background-color: #555555;
@@ -156,17 +173,15 @@
 /* Auth */
 .signUpForm {
   text-align: center;
-  /* margin-top: 3%;
-  margin-bottom: auto; */
+  margin-top: 3%;
+  margin-bottom: 6%;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid #DDDDDD;
   font-size: 0.9em;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-right: 5%;
-  padding-left: 5%;
+  padding: 4%;
   width: min-content;
+  margin-top: 100px;
 }
 
 .inputButton {
@@ -200,8 +215,6 @@
 }
 
 .motto {
-  margin-bottom: 6%;
-  margin-top: 6%;
   font-size: 16px;
   color: #8b8a8a;
   display: inline-block;
@@ -228,8 +241,8 @@
   position: absolute;
   margin-top: 6px;
   position: relative;
-  top: -23px;
-  left: -16px;
+  top: -5px;
+  left: -5px;
   font-weight: 700;
 }
 
@@ -238,13 +251,13 @@
 .container-formulary{
   display: grid;
   grid-template-columns: 40% 40%;
-  grid-gap: 10px;
+  grid-gap: 141px;
   margin-right: 50px;
-  margin-left: 250px;
-  margin-top: 150px;
+  margin-left: 7%;
+  margin-top: 7%;
 }
 .first-form{
-  width: 80%;
+  width: 111%;;
 }
 .btn btn-block btn-lg btn-primary{
   color: #6E2A8E;
@@ -378,8 +391,8 @@ img {
 .banner2,
 .banner3 {
   width: 100%;
-  margin-top: 125px;
-  height: 750px;
+  margin-top: 91px;
+  height: 526px;
 }
 .grid-container {
   display: grid;
@@ -402,6 +415,7 @@ img {
 }
 
 .filters {
+  margin-top: 56px;
   font-style: normal;
   padding: 1%;
   font-family: arial;
@@ -460,6 +474,7 @@ img {
 }
 
 .grid-containerMarcas {
+  margin-top: 56px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1.4fr 1.3fr 1.2fr;

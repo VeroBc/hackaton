@@ -14,8 +14,8 @@ export const OrderCart = (props) => {
   }
   
   return (
-    <div className='orderKitchen'>
-      <div className='listKitchen'>
+    <div className='orderCart'>
+      <div className='listCart'>
         {items.map((item, index) => <Item key={'ik'+ index} item={item} inCart={true} borrar={()=> props.deleteItemFromOrder(item)}/>)}
 
       </div>

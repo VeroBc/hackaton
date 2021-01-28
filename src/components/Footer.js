@@ -2,17 +2,16 @@ import "./Footer.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faInstagram, faFacebookSquare, faYoutube } from "@fortawesome/fontawesome-free-brands";
-import {
-  Link
-} from "react-router-dom";
+// import {
+//   Link
+// } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <div>
+    <div className="footer-contenedor">
       <div className="footer-container">
           <div> <img src="https://i.ibb.co/8gDCgXw/logo-ultimo.jpg" alt="logo-ultimo" border="0" className= "logo"></img></div>
          
-           
         <div>
           <ul>
             <li>L´bel</li>
