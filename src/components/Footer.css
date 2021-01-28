@@ -1,0 +1,78 @@
+.footer-container {
+    display: grid;
+    grid-template-columns: 30% 10% 15% 25%;
+    grid-gap: 10px;
+    border-top: solid purple 3px
+}
+footer {
+  color: white;
+  background-color: #6E2A8E;
+  width: 100%;
+  height: 46px;
+}
+ul li {
+  list-style: none;
+  font-size: 14px;
+  margin-top: 14px;
+  line-height: 1.1;
+}
+.container-tarjetas {
+  width: 200%;
+  display: flex;
+  justify-content: center;
+  margin-left: 120%;
+  margin-top: 30px;
+}
+.tarjeta {
+  height: 34px;
+  margin: 3px;
+}
+
+.form-suscribe {
+  display: flex;
+  text-align: end;
+  margin: 20px;
+}
+
+.footer-div {
+  display: flex;
+  justify-content: center;
+}
+.h4-footer {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 14px;
+}
+.icon-container {
+    display: flex;
+    margin-top: -111px;
+    justify-content: flex-start;
+    color: #adbcd7;
+}
+.icons-redes {
+  color: #adbcd7;
+  font-size: 23px;
+}
+.icon {
+   
+    font-size: 14px;
+  }
+
+
+.logo-footer{
+    width: 190px;
+}
+.cont-img-tarj{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+}
+.img-tarjetas{
+    width: 33%;
+    padding: 11px;
+}
+.router-icon{
+    margin-left: 13px;
+    color: #adbcd7;
+    font-size: 28px;
+}

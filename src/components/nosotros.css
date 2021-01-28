@@ -1,0 +1,75 @@
+.bannermarca{
+    margin-top:10px;
+}
+
+.cont-img-nosotros{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.img-nosotros{
+    width: 80%;
+}
+
+.fontTitulo {
+    display: block;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.fontTexto {
+
+    padding: 10px;
+    display: block;
+    font-size: 18px;
+    text-align: left;
+    font-weight:300;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  
+  .grid-containerNosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr -0.7fr 1.6fr 1.5fr;
+    grid-gap: 1em 1em;
+    gap: 1em 1em;
+    grid-template-areas:
+      "bannerNosotros bannerNosotros bannerNosotros"
+      "Nosotros videonosotros videonosotros"
+      "texto1Nosotros videonosotros videonosotros"
+      "texto2Nosotros videonosotros videonosotros";
+  }
+  
+  .bannerNosotros {
+    grid-area: bannerNosotros;
+  }
+  
+  .videonosotros {
+    grid-area: videonosotros;
+    margin: 1rem 0rem 1rem 0rem;
+    padding: 2%;
+    align-items: center;
+    vertical-align: middle;
+  }
+  
+  .Nosotros {
+    grid-area: Nosotros;
+  }
+  
+  .texto1Nosotros {
+    grid-area: texto1Nosotros;
+    font-size: 75%;
+    vertical-align: middle;
+  }
+  
+  .texto2Nosotros {
+    grid-area: texto2Nosotros;
+  }
+  
+  .titleNosotros {
+    margin: 0rem;
+  }
+  
