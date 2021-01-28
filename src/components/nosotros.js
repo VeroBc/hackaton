@@ -1,5 +1,36 @@
 import '../App.css';
+import './nosotros.css'
+import ReactPlayer from 'react-player'
 
 export const Nosotros = () => {
-    return <h2>Nosotros</h2>;
+    return (
+        <div>
+            <div class="grid-containerNosotros">
+                <div class="bannerNosotros">
+                <img src="/imagenes/nosotros.jpg" alt="marca" className="bannermarca"/>
+                </div>
+                <div class="videonosotros">
+                <ReactPlayer
+                        url="https://www.youtube.com/watch?v=r_Cny9XFzAY&ab_channel=BelcorpCorporativo"
+                        controls
+                        className='react-player'
+                        playbackRate = {2}
+                        width = "100%"
+                        height = "100%"
+                    />
+                </div>
+                <div className="fontTitulo">Nosotros</div>
+                <div className="fontTexto">Somos una corporación multinacional de belleza con más de 50 años de experiencia en la venta directa. Desde nuestra fundación, hemos acompañado a millones de mujeres en el logro de su independencia económica a través de la venta de productos de nuestras tres marcas, Ésika, L’Bel y Cyzone.</div>
+                <div className="fontTexto">Con un propósito que trasciende el resultado económico -Impulsamos belleza para lograr la realización personal–, inspiramos a cada persona a dar lo mejor de sí para que ella y su entorno logren lo extraordinario.</div>
+                <div className="fontTitulo">Nuestros compromisos</div>
+                <div className="fontTexto">Compartimos el compromiso de contribuir a un desarrollo sostenible, construyendo relaciones sólidas y duraderas con nuestros grupos de interés.</div>
+                
+            </div>
+            <div className="cont-img-nosotros">
+                <img src="/imagenes/nosotros.jpeg" alt="marca" className="img-nosotros"/>
+            </div>
+        <div>
+        </div>
+        </div>
+    )
 }

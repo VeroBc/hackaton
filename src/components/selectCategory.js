@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Category } from './category';
 import React, { useState } from 'react';
+import "./selectCategory.css";
 
 export const SelectCategory = (props) => {
 
@@ -10,14 +11,14 @@ export const SelectCategory = (props) => {
     <div>
         <section>
           <div className='subheader'>
-            <h1 className='filters'>
-              <a href="#" onClick={()=> setCurrentcategory('maquillaje')}>Maquillaje</a>
-              <a href="#" onClick={()=> setCurrentcategory('fragancias')}>Fragancias</a>
-              <a href="#" onClick={()=> setCurrentcategory('accesorios cosméticos')}>Accesorios cosméticos</a>
-              <a href="#" onClick={()=> setCurrentcategory('cuidado personal')}>Cuidado personal</a>
-              <a href="#" onClick={()=> setCurrentcategory('tratamiento corporal')}>Tratamiento corporal</a>
-              <a href="#" onClick={()=> setCurrentcategory('tratamiento facial')}>Tratamiento facial</a>
-            </h1>
+            <div className='filters'>
+              <a href="#"  className='filtersA' onClick={()=> setCurrentcategory('maquillaje')}>Maquillaje</a>
+              <a href="#"  className='filtersA' onClick={()=> setCurrentcategory('fragancias')}>Fragancias</a>
+              <a href="#"  className='filtersA' onClick={()=> setCurrentcategory('accesorios cosméticos')}>Accesorios cosméticos</a>
+              <a href="#"  className='filtersA' onClick={()=> setCurrentcategory('cuidado personal')}>Cuidado personal</a>
+              <a href="#"  className='filtersA' onClick={()=> setCurrentcategory('tratamiento corporal')}>Tratamiento corporal</a>
+              <a href="#"  className='filtersA' onClick={()=> setCurrentcategory('tratamiento facial')}>Tratamiento facial</a>
+            </div>
           </div>
 
           <div>

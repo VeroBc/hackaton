@@ -21,9 +21,6 @@ import { Signin } from './components/signin';
 import { OrderCart } from './components/orderCart';
 import { Payment } from './components/payment';
 import { signOut } from './services/auth';
-import { Esika } from './components/esika';
-import { Lbel } from './components/lbel';
-import { Cyzone } from './components/cyzone';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faInstagram } from "@fortawesome/fontawesome-free-brands";
@@ -69,13 +66,7 @@ export const App = () => {
       <div>
         {/* <header className="header">
           <div className= "nav-routes"> */}
-          <div style={{display: "flex",
-    position: "fixed",
-    backgroundColor: "white",
-    zIndex: 5000,
-    top:0,
-    left: 0,
-    right: 0}}>
+          <div style={{display: "flex"}}>
 
             <div style={{flex:0.2, display: "flex", alignItems:"center", justifyContent:"center"}}>
               <img src="https://i.ibb.co/8gDCgXw/logo-ultimo.jpg" alt="logo-ultimo"  className= "logo"border="0"></img>
@@ -126,17 +117,6 @@ export const App = () => {
           </Route>
           <Route path="/payment">
             <Payment orderList={orderList}/>
-          </Route>
-          <Route path="/esika">
-            <Esika />
-          </Route>
-
-          <Route path="/lbel">
-            <Lbel />
-          </Route>
-
-          <Route path="/cyzone">
-            <Cyzone />
           </Route>
           <Route path="/">
             <Home/>
