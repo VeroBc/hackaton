@@ -1,11 +1,16 @@
 import React from 'react';
 import '../App.css';
+import Button from 'react-bootstrap/Button';
+import {MyVerticallyCenteredModal} from './retail';
+
 
 export const Payment = (props) => {
 
+  const [modalShow, setModalShow] = React.useState(false);
+ 
+
   return (
     <div className='orderKitchen'>
-
 
     <div>
           <div className="container-formulary">
@@ -71,11 +76,22 @@ export const Payment = (props) => {
                   ></input>
                   <label for="tarjeta-ccv">CVV</label>
                   <input type="text" id="tarjeta-ccv" className="form-control" required></input>
-              <input
+                  <>
+                  <Button variant="primary" onClick={() => setModalShow(true)}>
+                      Continuar con el pago
+                  </Button>
+                      <MyVerticallyCenteredModal
+                          show={modalShow}
+                          onHide={() => setModalShow(false)}
+                  />
+                  </>
+
+              {/* <input
                 type="submit"
                 value="Continuar al pago"
                 className="btn-submit"
-              ></input>
+                onClick={confirmation}
+              ></input> */}
             </form>
             </div>
             <div>

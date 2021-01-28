@@ -22,7 +22,7 @@ export const Contacto = () => {
     return (
     <div>            
         <div>
-            <img src="/imagenes/bannercontacto.jpg" alt="marca" className="bannermarca"/>
+            <img src="https://i.ibb.co/2ZDD6LP/bannercontacto.jpg" alt="marca" className="bannermarca"/>
         </div>
         <div>
             <section className="Material-contact-section section-padding section-dark">
