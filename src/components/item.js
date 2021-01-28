@@ -4,7 +4,7 @@ import '../App.css';
 export const Item = (props) => {
 
   const inCategory = !!props.seleccionar;
-
+  
   const priceSale = parseInt(props.item.price - (props.item.price * (props.item.discount/100)));
   console.log(props.inCart);
   

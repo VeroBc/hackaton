@@ -1,11 +1,17 @@
 import React from 'react';
 import { Item } from './item';
 import '../App.css';
+import { useHistory } from "react-router-dom";
+
 
 export const OrderCart = (props) => {
+  const items =  props.orderList;
+  const history = useHistory();
 
-  let items =  props.orderList;
+  const payment = () => {
+    history.push("/payment");
 
+  }
   
   return (
     <div className='orderKitchen'>
@@ -17,7 +23,7 @@ export const OrderCart = (props) => {
       <div className='totalPrice'>
           <div className='total'>Total pedido</div>
           <div className='amount'>S/. {(props.orderList.reduce((acc, item) => acc + (parseInt(item.price - (item.price * (item.discount/100)))), 0)).toFixed(2)}</div>
-          <button className ='buttonOrder'>Comprar ahora</button>
+          <button className ='buttonOrder' onClick={payment} >Comprar ahora</button>
       </div>
     </div>
   )

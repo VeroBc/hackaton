@@ -28,32 +28,30 @@ export const Signin = () => {
   return(
     <div>
       <form onSubmit={handleSubmit} action="/" method="POST" className="signUpForm">
-        {/* <img src={logo} className='imglogoForm' alt="Logo"/> */}
-        <label className="motto">Inicia sesión</label>
         <div>
-
-        <div>
-          <p className="motto">O continuar con:</p>
-          <AuthPage/>
+          <div>
+            <AuthPage/>
+          </div>
+          <p className="motto">O iniciar sesión con:</p>
+          <input 
+            type="text"
+            name="email" 
+            placeholder="Correo electrónico" 
+            value={stateSignin.email} 
+            className="inputButton" 
+            onChange={handleInputChange}
+            required ></input>
+          <input 
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            value={stateSignin.password}
+            onChange={handleInputChange}
+            className="inputButton" 
+            required></input>
+          <div id= "errorMessage"></div>
         </div>
-            <input 
-              type="text"
-              name="email" 
-              placeholder="Correo electrónico" 
-              value={stateSignin.email} 
-              className="inputButton" 
-              onChange={handleInputChange}
-              required ></input>
-            <input 
-              type="password"
-              name="password"
-              placeholder="Contraseña"
-              value={stateSignin.password}
-              onChange={handleInputChange}
-              className="inputButton" 
-              required></input>
-            <div id= "errorMessage"></div>
-        </div>
+        
         <button type="submit" className="signUpButton">Inicia sesión</button>
 
         <p className="motto">¿No tienes una cuenta?<a href="/signup" className="login" style={styles.color}>Regístrate</a></p>

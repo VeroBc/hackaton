@@ -122,14 +122,14 @@
 /* Auth */
 .signUpForm {
   text-align: center;
-  margin-top: 3%;
-  margin-bottom: auto;
+  /* margin-top: 3%;
+  margin-bottom: auto; */
   margin-left: auto;
   margin-right: auto;
   border: 1px solid #DDDDDD;
   font-size: 0.9em;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 25px;
+  padding-bottom: 25px;
   padding-right: 5%;
   padding-left: 5%;
   width: min-content;
@@ -197,4 +197,27 @@
   top: -23px;
   left: -16px;
   font-weight: 700;
+}
+
+
+/* userform payment */
+.container-formulary{
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-gap: 10px;
+  margin-right: 50px;
+  margin-left: 250px;
+  margin-top: 150px;
+}
+.first-form{
+  width: 80%;
+}
+.btn btn-block btn-lg btn-primary{
+  color: #6E2A8E;
+}
+.btn-submit{
+  background:#6E2A8E;
+  color:white;
+  size: 10px;
+  border: 3px solid;
 }

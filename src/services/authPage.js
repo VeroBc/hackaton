@@ -1,7 +1,6 @@
 import firebase from 'firebase';
 import { auth } from './firebase';
 import { setUser } from './backend';
-import logoGoogle from '../img/logo-google.svg'
 
 export const AuthPage = () => {
   const provider = new firebase.auth.GoogleAuthProvider()
@@ -26,7 +25,9 @@ export const AuthPage = () => {
 
   return (
     <div>
-      <img src={logoGoogle} onClick={authWithGoogle} alt="Google" className="googleIcon"></img>
+      <button className="inputButton" onClick={authWithGoogle}>INGRESA CON GOOGLE</button>
+      <button className="inputButton">INGRESA CON FACEBOOK</button>
+      <button className="inputButton">INGRESA CON APPLE</button>
     </div>
   )
 

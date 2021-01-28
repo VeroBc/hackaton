@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../App.css';
 import { createUser } from '../services/auth';
 import {AuthPage} from '../services/authPage';
-// import logo from '../img/logobqcolor.png';
 
 export const Signup = () => {
 
@@ -28,30 +27,28 @@ export const Signup = () => {
   return(
     <div>
       <form onSubmit={handleSubmit} action="/" method="POST" className="signUpForm">
-        {/* <img src={logo} className='imglogoForm' alt="Logo"/> */}
-        <label className="motto">Crea tu cuenta</label>
         <div>
-            <div>
-              <p className="motto">O continuar con:</p>
-              <AuthPage/>
-            </div>
-            <input 
-              type="text"
-              name="email" 
-              placeholder="Correo electrónico" 
-              value={stateSignup.email} 
-              className="inputButton" 
-              onChange={handleInputChange}
-              required ></input>
-            <input 
-              type="password"
-              name="password"
-              placeholder="Contraseña"
-              value={stateSignup.password}
-              onChange={handleInputChange}
-              className="inputButton" 
-              required></input>
-            <div id= "errorMessage"></div>
+          <div>
+            <AuthPage/>
+          </div>
+          <p className="motto">O registrarse con:</p>
+          <input 
+            type="text"
+            name="email" 
+            placeholder="Correo electrónico" 
+            value={stateSignup.email} 
+            className="inputButton" 
+            onChange={handleInputChange}
+            required ></input>
+          <input 
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            value={stateSignup.password}
+            onChange={handleInputChange}
+            className="inputButton" 
+            required></input>
+          <div id= "errorMessage"></div>
         </div>
         <button type="submit" className="signUpButton">Regístrate</button>
         
