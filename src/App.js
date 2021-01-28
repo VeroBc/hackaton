@@ -1,4 +1,15 @@
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import './services/firebase';
+
+import { getCurrentUser } from './services/backend';
+import { UserContext } from './components/userContext';
+
 import { Home } from './components/home';
 import { Nosotros } from './components/nosotros';
 import { NuestrasMarcas } from './components/nuestrasMarcas';
@@ -8,7 +19,9 @@ import { Contacto } from './components/contacto';
 import { Signup } from './components/signup';
 import { Signin } from './components/signin';
 import { OrderCart } from './components/orderCart';
+import { Payment } from './components/payment';
 import { signOut } from './services/auth';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faInstagram } from "@fortawesome/fontawesome-free-brands";
 import {faFacebookSquare } from "@fortawesome/fontawesome-free-brands";
@@ -18,17 +31,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
-import './services/firebase';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-// import { subscribeOrder } from './services/backend'
-import { getCurrentUser } from './services/backend';
-import { UserContext } from './components/userContext';
-import React, { useState, useEffect, useContext } from 'react';
+
 
 export const App = () => {
 
@@ -49,7 +52,7 @@ export const App = () => {
   }
 
    const deleteItemFromOrder = (item) => {
-    const tempArray = orderList.filter((itemInOrderList)=> itemInOrderList.id !== item.id );        
+    const tempArray = orderList.filter(itemInOrderList => itemInOrderList.id !== item.id );        
     setOrderList(tempArray);
   }
   // useEffect(() => subscribeOrder(setOrderList), []) 
@@ -103,6 +106,9 @@ export const App = () => {
           </Route>
           <Route path="/cart">
             <OrderCart orderList={orderList} deleteItemFromOrder={deleteItemFromOrder} />
+          </Route>
+          <Route path="/payment">
+            <Payment orderList={orderList}/>
           </Route>
           <Route path="/">
             <Home/>
