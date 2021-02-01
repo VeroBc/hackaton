@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { AppContext } from '../services/appContext'
 import { Item } from './item.js';
 
 import { subscribeBrand } from '../services/backend';
@@ -6,14 +7,16 @@ import '../App.css';
 
 export const Brand = (props) => {
 
+  const context = useContext(AppContext);
+
   const [categoryBrand, setCategoryBrand] = useState([]);
 
   useEffect(() => subscribeBrand(setCategoryBrand, props.brandType), [props.brandType]) 
 
   // para determinar si el item ha sido seleccionado
   const inCart = (item) => {
-    for (let i = 0; i < props.orderList.length; i++)
-      if (item.id === props.orderList[i].id )
+    for (let i = 0; i < context.orderList.length; i++)
+      if (item.id === context.orderList[i].id )
         return true
   }
 
@@ -22,8 +25,8 @@ export const Brand = (props) => {
       { categoryBrand.map((item, index) => <Item 
           key = {'m'+index} 
           item = {item} 
-          seleccionar={props.addItemToOrder}
-          borrar={() => props.deleteItemFromOrder(item)} 
+          seleccionar={context.addItemToOrder}
+          borrar={() => context.deleteItemFromOrder(item)} 
           inCart = {inCart(item)}
           />)
       }

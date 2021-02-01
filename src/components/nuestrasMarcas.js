@@ -34,7 +34,7 @@ export const NuestrasMarcas = (props) => {
 
       <div id="brandd"  style={{height: 50}} />
       <h3 style={{marginLeft: "1.5%"}}>  Marca: {currentBrand}</h3>
-      <Brand brandType={currentBrand} addItemToOrder={props.addItemToOrder} deleteItemFromOrder={props.deleteItemFromOrder} user={props.user} orderList={props.orderList}/>
+      <Brand brandType={currentBrand} user={props.user}/>
     </div>
   )
 }
