@@ -27,7 +27,7 @@ export const SelectCategory = (props) => {
           </div>
 
           <div>
-            <Category categoryType={currentCategory} addItemToOrder={props.addItemToOrder} deleteItemFromOrder={props.deleteItemFromOrder} user={props.user} orderList={props.orderList}/>
+            <Category categoryType={currentCategory}/>
           </div>
 
         </section>

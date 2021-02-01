@@ -5,13 +5,13 @@ import './services/firebase';
 import './index.css';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
-import { UserProvider } from './components/userContext'
+import { AppContextProvider } from './services/appContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserProvider>
+    <AppContextProvider>
       <App />
-    </UserProvider>
+    </AppContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

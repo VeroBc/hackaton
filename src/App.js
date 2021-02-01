@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import './services/firebase';
 
-import { getCurrentUser } from './services/backend';
-import { UserContext } from './components/userContext';
+// import { getCurrentUser } from './services/backend';
+import { AppContext } from './services/appContext';
 
 import { Home } from './components/home';
 import { Nosotros } from './components/nosotros';
@@ -26,10 +26,10 @@ import { Lbel } from './components/lbel';
 import { Cyzone } from './components/cyzone';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faInstagram } from "@fortawesome/fontawesome-free-brands";
-import {faFacebookSquare } from "@fortawesome/fontawesome-free-brands";
-import {faWhatsapp } from "@fortawesome/fontawesome-free-brands";
-import {faYoutube } from "@fortawesome/fontawesome-free-brands";
+// import {faInstagram } from "@fortawesome/fontawesome-free-brands";
+// import {faFacebookSquare } from "@fortawesome/fontawesome-free-brands";
+// import {faWhatsapp } from "@fortawesome/fontawesome-free-brands";
+// import {faYoutube } from "@fortawesome/fontawesome-free-brands";
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart, faSearch, faHeart, faUser, } from '@fortawesome/free-solid-svg-icons';
 import { Footer } from './components/Footer'
@@ -39,45 +39,20 @@ import './App.css';
 
 export const App = () => {
 
-  const [user, setUser]= useState(null);
-
-  const currentUser = useContext(UserContext);
-
-  const getUserData = (dataUser) => {
-    getCurrentUser(dataUser).then((userData) => {
-      return setUser(userData);
-    });
-  }
-
-  const [orderList, setOrderList] = useState([]);
-
-  const addItemToOrder = (item) =>  {
-    setOrderList([...orderList, item]);
-  }
-
-   const deleteItemFromOrder = (item) => {
-    const tempArray = orderList.filter(itemInOrderList => itemInOrderList.id !== item.id );        
-    setOrderList(tempArray);
-  }
-  // useEffect(() => subscribeOrder(setOrderList), []) 
-
-
-  useEffect(() => getUserData(currentUser), [currentUser])
+  const context = useContext(AppContext);
 
   // const HOMEPATH = window.location.href.includes("Hack") ? "/Hack" : "/" ;
 
   return (
     <Router>
       <div>
-        {/* <header className="header">
-          <div className= "nav-routes"> */}
           <div style={{display: "flex",
-    position: "fixed",
-    backgroundColor: "white",
-    zIndex: 5000,
-    top:0,
-    left: 0,
-    right: 0}}>
+                position: "fixed",
+                backgroundColor: "white",
+                zIndex: 5000,
+                top:0,
+                left: 0,
+                right: 0}}>
 
             <div style={{flex:0.2, display: "flex", alignItems:"center", justifyContent:"center"}}>
               <img src="https://i.ibb.co/8gDCgXw/logo-ultimo.jpg" alt="logo-ultimo"  className= "logo"border="0"></img>
@@ -93,23 +68,23 @@ export const App = () => {
               <Link to="/"className="routes-nav"><FontAwesomeIcon className ='icon' icon={faSearch} /></Link>
               <Link className="routes-nav" to="/signin"><FontAwesomeIcon className ='icon' icon={faUser} /></Link>
               <Link to="/signin"className="routes-nav"><FontAwesomeIcon className ='icon' icon={faHeart} /></Link>
-              <Link className="routes-nav" to="/cart"><FontAwesomeIcon className ='icon' icon={faShoppingCart}/><div className ='quantity'>{orderList.length}</div></Link>
+              <Link className="routes-nav" to="/cart"><FontAwesomeIcon className ='icon' icon={faShoppingCart}/><div className ='quantity'>{context.orderList.length}</div></Link>
               <FontAwesomeIcon className='signOutIcon' onClick={()=> signOut()} icon={faSignOutAlt} />
-              {user && <p>{user.name}</p>}
+              {context.currentUserData && <p>{context.currentUserData.name}</p>}
             </div>
           </div>    
           {/* </div>
         </header>  */}
-                <Switch>
+        <Switch>
 
           <Route path="/nosotros">
             <Nosotros />
           </Route>
           <Route path="/nuestrasMarcas">
-            <NuestrasMarcas user={user} addItemToOrder={addItemToOrder} deleteItemFromOrder={deleteItemFromOrder} orderList={orderList} />
+            <NuestrasMarcas/>
           </Route>
           <Route path="/categorias">
-            <SelectCategory user={user} addItemToOrder={addItemToOrder} deleteItemFromOrder={deleteItemFromOrder} orderList={orderList}/>
+            <SelectCategory/>
           </Route>
           <Route path="/promociones">
             <Promociones />
@@ -124,10 +99,10 @@ export const App = () => {
             <Signup />
           </Route>
           <Route path="/cart">
-            <OrderCart orderList={orderList} deleteItemFromOrder={deleteItemFromOrder} />
+            <OrderCart/>
           </Route>
           <Route path="/payment">
-            <Payment orderList={orderList}/>
+            <Payment/>
           </Route>
           <Route path="/esika">
             <Esika />
@@ -142,7 +117,7 @@ export const App = () => {
           </Route>
           <Route path="/">
             <Home/>
-            <SelectCategory user={user} addItemToOrder={addItemToOrder} deleteItemFromOrder={deleteItemFromOrder} orderList={orderList}/>
+            <SelectCategory/>
           </Route>
  
         </Switch>

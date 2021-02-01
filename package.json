@@ -2,7 +2,6 @@
   "name": "hackaton",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://verobc.github.io/Hack",
   "dependencies": {
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",

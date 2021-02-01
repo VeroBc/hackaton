@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../services/appContext'
 import '../App.css';
 import Button from 'react-bootstrap/Button';
 import {MyVerticallyCenteredModal} from './retail';
 
 
 export const Payment = (props) => {
+
+  const context = useContext(AppContext);
 
   const [modalShow, setModalShow] = React.useState(false);
  
@@ -85,13 +88,6 @@ export const Payment = (props) => {
                           onHide={() => setModalShow(false)}
                   />
                   </>
-
-              {/* <input
-                type="submit"
-                value="Continuar al pago"
-                className="btn-submit"
-                onClick={confirmation}
-              ></input> */}
             </form>
             </div>
             <div>
@@ -100,7 +96,7 @@ export const Payment = (props) => {
               </h4>
               <ul className="list-group mb-3">
               {
-                props.orderList.map((item, index) => {
+                context.orderList.map((item, index) => {
                   return(
                     <li 
                       className="list-group-item d-flex justify-content-between"
@@ -112,29 +108,9 @@ export const Payment = (props) => {
                   )
                 })
               }
-                {/* <li className="list-group-item d-flex justify-content-between">
-                    <h6 className="my-0">item1</h6>
-                    <small className="text-muted">descripción</small>
-                  <span className="text-muted">10€</span>
-                </li>
-                <li className="list-group-item d-flex justify-content-between">
-                    <h6 className="my-0">item2</h6>
-                    <small className="text-muted">descripción</small>
-                  <span className="text-muted">20€</span>
-                </li>
-                <li className="list-group-item d-flex justify-content-between">
-                    <h6 className="my-0">item3</h6>
-                    <small className="text-muted">descripcion</small>
-                  <span className="text-muted">3€</span>
-                </li> 
-                <li className="list-group-item d-flex justify-content-between bg-light">
-                    <h6 className="my-0">Codigo de descuento</h6>
-                    <small className="text-success">DPS5</small>
-                  <span className="text-success">-5€</span>
-                </li> */}
                 <li className="list-group-item d-flex justify-content-between bg-light">
                   <span>Total (SOLES)</span>
-                  <strong><div className='amount'>S/. {(props.orderList.reduce((acc, item) => acc + (parseInt(item.price - (item.price * (item.discount/100)))), 0)).toFixed(2)}</div></strong>
+                  <strong><div className='amount'>S/. {(context.orderList.reduce((acc, item) => acc + (parseInt(item.price - (item.price * (item.discount/100)))), 0)).toFixed(2)}</div></strong>
                 </li>
               </ul>
               <form action="" className="card p-2">
@@ -148,11 +124,6 @@ export const Payment = (props) => {
               </div>
           </div> 
       </div>
-
-      {/* <div className='listKitchen'>
-        {items.map((item, index) => <Item key={'ik'+ index} item={item} inCart={true} borrar={()=> props.deleteItemFromOrder(item)}/>)}
-      </div> */}
-
     </div>
   )
 }
